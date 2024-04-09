@@ -119,8 +119,9 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    // Add this line to create the apk_path_arg
     String *apk_path_arg = (String *)env->NewStringUTF(apk_path.c_str());
-    String *save_dir_arg = (String *)env->NewStringUTF(work_dir.c_str());
+    String *save_dir_arg = (String *)env->NewStringUTF((work_dir / "gamedata").c_str());
     String *pkg_dir_arg = (String *)env->NewStringUTF("com.johnny.loader");
     printf("apk_path %s save_dir %s pkg_dir %s\n", apk_path_arg->str, save_dir_arg->str, pkg_dir_arg->str);
 
