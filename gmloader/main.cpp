@@ -47,7 +47,7 @@ int load_module(const char *soname, zip_t *apk, so_module &mod, uintptr_t base_a
     #error Unknown arch, implement me.
 #endif
 
-    snprintf(filepath, PATH_MAX, "lib/%s/%s", path, soname);
+    snprintf(filepath, PATH_MAX, "gmloader-libs/%s/%s", path, soname);
     if (io_load_file(filepath, &buffer, &image_size))
         goto load_module_success;
 
